@@ -1,0 +1,91 @@
+{
+  "intro": [
+    "Welcome Anon",
+    "You are a security specialist",
+    "Your Job is to break into",
+    "Acme Corp and see how far you can get"
+  ],
+  "entities": [
+    {
+      "id": "Player",
+      "symbol": "@",
+      "x": 10,
+      "y": 1
+    },
+    {
+      "id": "Exit",
+      "symbol": "E",
+      "x": 5,
+      "y": 0,
+      "text": "Its the Exit.",
+      "dialogStates": [
+        {
+          "id": "start",
+          "text": "Head to Acme Corp?",
+          "options": [
+            {
+              "text": "Yes",
+              "nextState": "exit"
+            },
+            {
+              "text": "No",
+              "nextState": "end"
+            }
+          ]
+        },
+        {
+          "id": "exit",
+          "text": "You leave the building and head to Acme Corp.",
+          "nextState": "exit"
+        },
+        {
+          "id": "stay",
+          "text": "You decide to stay.",
+          "nextState": "exit"
+        }
+      ]
+    },
+    {
+      "id": "Phone",
+      "symbol": "P",
+      "x": 5,
+      "y": 5,
+      "text": "A Telephone Sits here, would you like to call someone?",
+      "dialogStates": [
+        {
+          "id": "start",
+          "text": "Who would you like to call?",
+          "options": [
+            {
+              "text": "Order Lunch",
+              "nextState": "lunch"
+            },
+            {
+              "text": "Call Acme Corp",
+              "nextState": "acme_intro"
+            }
+          ]
+        },
+        {
+          "id": "lunch",
+          "text": "You order lunch and it arrives in 30 minutes.",
+          "nextState": "exit"
+        },
+        {
+          "id": "acme_intro",
+          "text": "Hello, Thank you for calling Acme Corp, how can I help you?",
+          "options": [
+            {
+              "text": "I Was calling about the job listing",
+              "nextState": "person"
+            },
+            {
+              "text": "I am a person!",
+              "nextState": "person"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

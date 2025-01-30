@@ -1,0 +1,40 @@
+{
+  "intro": ["Welcome Acme Corp Headquarters!"],
+  "entities": [
+    {
+      "id": "Player",
+      "symbol": "@",
+      "x": 10,
+      "y": 1
+    },
+    {
+      "id": "Exit",
+      "symbol": "E",
+      "x": 5,
+      "y": 0,
+      "text": "Its the Exit.",
+      "dialogStates": [
+        {
+          "id": "start",
+          "text": "Give up and Head Home?",
+          "options": [
+            {
+              "text": "Yes",
+              "nextState": "end_game"
+            },
+            {
+              "text": "No",
+              "nextState": "end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Secretary",
+      "symbol": "S",
+      "x": 10,
+      "y": 5
+    }
+  ]
+}

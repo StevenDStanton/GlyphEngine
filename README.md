@@ -1,1 +1,21 @@
 # GlyphEngine
+
+This is a small, badly written, text based 2D engine written in Go using the EbitEngine Library.
+
+I wrote this in a few days during the Pirate Software Game Jam. It started out beautifully structured using all of the best practices.
+
+As life happened and time grew short it became a tangled ball of mud.
+
+still I had fun writing it, I may even come back and clean it up more in the future.
+
+## How to Use
+
+I will fill this in later, for now just read over the code. I removed most of the assets since they
+
+did not belong to me. So you will need to include your own sound files in `internal/player/player.go`
+
+You will also need to update the image references that I did not include for the intro scene in `internal/intro/intro.go`
+
+## Why share
+
+I had fun with it, and I am hoping someone else will find this interesting or useful and do something cool with it despite how badly written it is.
