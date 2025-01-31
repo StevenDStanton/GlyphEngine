@@ -144,12 +144,12 @@ func (l *Level) processACtivatedEntity() {
 			l.setDialogForCurrentState()
 		} else {
 			opt := state.Options[l.selectedDialog]
-			if opt.NextState == "end" {
+			if opt.NextState == "end_interaction" {
 				l.currentEntity.active = false
 				l.clearDialogArea()
 			}
 
-			if opt.NextState == "exit" {
+			if opt.NextState == "next_level" {
 				l.level++
 				l.LoadLevel()
 				return

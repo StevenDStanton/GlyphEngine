@@ -4,7 +4,7 @@
     {
       "id": "Player",
       "symbol": "@",
-      "x": 10,
+      "x": 5,
       "y": 1
     },
     {
@@ -24,7 +24,7 @@
             },
             {
               "text": "No",
-              "nextState": "end"
+              "nextState": "end_interaction"
             }
           ]
         }
@@ -32,9 +32,82 @@
     },
     {
       "id": "Secretary",
+      "text": "A young woman with a friendly smile sits here",
       "symbol": "S",
       "x": 10,
-      "y": 5
+      "y": 5,
+      "dialogStates": [
+        {
+          "id": "start",
+          "text": "Welcome to Acme Corp how can I help you?",
+          "options": [
+            {
+              "text": "I need to see your boss now!",
+              "nextState": "boss"
+            },
+            {
+              "text": "I am here for the job interview",
+              "nextState": "no_job"
+            },
+            {
+              "text": "We spoke on the phone I am here to see Bob",
+              "nextState": "wrong_person"
+            },
+            {
+              "text": "We spoke on the phone I am here to see Jeremy",
+              "nextState": "jeremy"
+            },
+            {
+              "text": "We spoke on the phone I am here to see Ross",
+              "nextState": "wrong_person"
+            }
+          ]
+        },
+        {
+          "id": "boss",
+          "text": "Sir you will have to make an appointment first",
+          "options": [
+            {
+              "text": "Leave",
+              "nextState": "end_game"
+            }
+          ]
+        },
+        {
+          "id": "no_job",
+          "text": "Sorry sir we have no job openings right now",
+          "options": [
+            {
+              "text": "Leave",
+              "nextState": "end_game"
+            }
+          ]
+        },
+        {
+          "id": "wrong_person",
+          "text": "No one by that name works here sir",
+          "options": [
+            {
+              "text": "Leave",
+              "nextState": "end_game"
+            },
+            {
+              "text": "Call Acme Corp",
+              "nextState": "acme_intro"
+            }
+          ]
+        },
+        {
+          "id": "jeremy",
+          "text": "Oh about the water. Lunch is almost over you can head back",
+          "options": [
+            {
+              "text": "head to offices",
+              "nextState": "next_level"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

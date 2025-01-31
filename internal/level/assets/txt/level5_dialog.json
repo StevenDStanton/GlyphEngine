@@ -1,5 +1,5 @@
 {
-  "intro": ["Welcome Acme Corp Headquarters!"],
+  "intro": ["The CEOs Office"],
   "entities": [
     {
       "id": "Player",
@@ -20,21 +20,84 @@
           "options": [
             {
               "text": "Yes",
-              "nextState": "end_game"
+              "nextStatee": "end_game"
             },
             {
               "text": "No",
-              "nextState": "end"
+              "nextStatee": "end"
             }
           ]
         }
       ]
     },
     {
-      "id": "Secretary",
-      "symbol": "S",
+      "id": "Computer",
+      "symbol": "C",
       "x": 10,
-      "y": 5
+      "y": 36,
+      "text": "A Computer sits here",
+      "dialogStates": [
+        {
+          "id": "start",
+          "text": "Would you like to login?",
+          "options": [
+            {
+              "text": "Login",
+              "nextState": "login"
+            },
+            {
+              "text": "Leave",
+              "nextState": "end_interaction"
+            }
+          ]
+        },
+        {
+          "id": "login",
+          "text": "Enter Password:",
+          "options": [
+            {
+              "text": "Password",
+              "nextState": "security"
+            },
+            {
+              "text": "bethany062981",
+              "nextState": "security"
+            },
+            {
+              "text": "abc123",
+              "nextState": "security"
+            },
+            {
+              "text": "Bingo!",
+              "nextState": "success"
+            },
+            {
+              "text": "MegaChadSkibbityRizzler",
+              "nextState": "security"
+            }
+          ]
+        },
+        {
+          "id": "success",
+          "text": "Well you did it. You successfully infiltrated the Acme Corp!",
+          "options": [
+            {
+              "text": "Restart Game",
+              "nextState": "end_game"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "text": "Alarms sound and you hear footsteps approaching. Game Over",
+          "options": [
+            {
+              "text": "Restart Game",
+              "nextState": "end_game"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

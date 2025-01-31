@@ -1,5 +1,5 @@
 {
-  "intro": ["Welcome Acme Corp Headquarters!"],
+  "intro": ["Executive Suite!"],
   "entities": [
     {
       "id": "Player",
@@ -24,17 +24,66 @@
             },
             {
               "text": "No",
-              "nextState": "end"
+              "nextState": "end_interaction"
             }
           ]
         }
       ]
     },
     {
-      "id": "Secretary",
-      "symbol": "S",
+      "id": "security",
+      "symbol": "X",
       "x": 10,
-      "y": 5
+      "y": 5,
+      "text": "A Board security guard looks up from his desk",
+      "dialogStates": [
+        {
+          "id": "start",
+          "text": "Lets see your badge",
+          "options": [
+            {
+              "text": "I lost it",
+              "nextState": "security"
+            },
+            {
+              "text": "I forgot it",
+              "nextState": "security"
+            },
+            {
+              "text": "They said to tell you Sorry printers still down",
+              "nextState": "goon"
+            },
+            {
+              "text": "I don't need one I have an appointment",
+              "nextState": "security"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "text": "Yea get on out of here ya Goblin",
+          "options": [
+            {
+              "text": "Fine",
+              "nextState": "end_game"
+            }
+          ]
+        },
+        {
+          "id": "goon",
+          "text": "What are you here for",
+          "options": [
+            {
+              "text": "To steal company secrets",
+              "nextState": "security"
+            },
+            {
+              "text": "Important information on the water saftey",
+              "nextState": "next_level"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

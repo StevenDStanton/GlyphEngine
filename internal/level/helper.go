@@ -5,10 +5,14 @@ import (
 )
 
 func (l *Level) IsWalkable(x, y int) bool {
+	if l.disableInput {
+		return false
+	}
 	tile := l.MapGrid[y][x]
 
 	if l.showingItem {
 		l.showingItem = false
+		l.currentEntity = nil
 		l.clearDialogArea()
 	}
 

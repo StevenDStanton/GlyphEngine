@@ -1,16 +1,16 @@
 {
-  "intro": ["Welcome Acme Corp Headquarters!"],
+  "intro": ["The office feels strangly empty", "Everyone must be at lunch"],
   "entities": [
     {
       "id": "Player",
       "symbol": "@",
-      "x": 10,
+      "x": 12,
       "y": 1
     },
     {
       "id": "Exit",
       "symbol": "E",
-      "x": 5,
+      "x": 12,
       "y": 0,
       "text": "Its the Exit.",
       "dialogStates": [
@@ -24,17 +24,97 @@
             },
             {
               "text": "No",
-              "nextState": "end"
+              "nextState": "end_interaction"
             }
           ]
         }
       ]
     },
     {
-      "id": "Secretary",
-      "symbol": "S",
-      "x": 10,
-      "y": 5
+      "id": "Exit",
+      "symbol": "E",
+      "x": 12,
+      "y": 33,
+      "text": "Executive Suite.",
+      "dialogStates": [
+        {
+          "id": "start",
+          "text": "Enter the Pass Code To Enter",
+          "options": [
+            {
+              "text": "1981",
+              "nextState": "security"
+            },
+            {
+              "text": "1111",
+              "nextState": "security"
+            },
+            {
+              "text": "0629",
+              "nextState": "security"
+            },
+            {
+              "text": "4685",
+              "nextState": "security"
+            },
+            {
+              "text": "1234",
+              "nextState": "next_level"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "options": [
+            {
+              "text": "You hear an alarm go off and people running",
+              "next_state": "end_game"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DeskOne",
+      "symbol": "D",
+      "x": 8,
+      "y": 6,
+      "text": "The placque on the desk says Jeremy"
+    },
+    {
+      "id": "DeskTwo",
+      "symbol": "D",
+      "x": 18,
+      "y": 6,
+      "text": "A flyer is here for Bingos memorial service"
+    },
+    {
+      "id": "Three",
+      "symbol": "D",
+      "x": 8,
+      "y": 17,
+      "text": "A Notice that the security badge printer is offline"
+    },
+    {
+      "id": "Four",
+      "symbol": "D",
+      "x": 18,
+      "y": 17,
+      "text": "Empty"
+    },
+    {
+      "id": "Five",
+      "symbol": "D",
+      "x": 8,
+      "y": 28,
+      "text": "The Computer On with an email showing: Executive Code 1234"
+    },
+    {
+      "id": "Six",
+      "symbol": "D",
+      "x": 18,
+      "y": 28,
+      "text": "A Goblin sits behind his desk furiously typing away"
     }
   ]
 }
