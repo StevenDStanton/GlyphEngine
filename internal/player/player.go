@@ -1,25 +1,21 @@
 package player
 
 import (
-	"bytes"
-	"log"
-
 	_ "embed"
 
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/hajimehoshi/ebiten/v2/audio"
-	"github.com/hajimehoshi/ebiten/v2/audio/wav"
 	"golang.org/x/exp/rand"
 )
 
-//go:embed assets/audio/footstep_carpet_000.wav
-var step1 []byte
+// //go:embed assets/audio/footstep_carpet_000.wav
+// var step1 []byte
 
-//go:embed assets/audio/footstep_carpet_001.wav
-var step2 []byte
+// //go:embed assets/audio/footstep_carpet_001.wav
+// var step2 []byte
 
-//go:embed assets/audio/footstep_carpet_002.wav
-var step3 []byte
+// //go:embed assets/audio/footstep_carpet_002.wav
+// var step3 []byte
 
 const (
 	MOVE_COOLDOWN = 15
@@ -44,36 +40,36 @@ type PlayerMove struct {
 }
 
 func New(ac *audio.Context, x, y int) *Player {
-	d1, err := wav.Decode(ac, bytes.NewReader(step1))
-	if err != nil {
-		log.Fatal(err)
-	}
-	p1, err := ac.NewPlayer(d1)
-	if err != nil {
-		log.Fatal(err)
-	}
+	// d1, err := wav.Decode(ac, bytes.NewReader(step1))
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// p1, err := ac.NewPlayer(d1)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
-	d2, err := wav.Decode(ac, bytes.NewReader(step2))
-	if err != nil {
-		log.Fatal(err)
-	}
-	p2, err := ac.NewPlayer(d2)
-	if err != nil {
-		log.Fatal(err)
-	}
+	// d2, err := wav.Decode(ac, bytes.NewReader(step2))
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// p2, err := ac.NewPlayer(d2)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
-	d3, err := wav.Decode(ac, bytes.NewReader(step3))
-	if err != nil {
-		log.Fatal(err)
-	}
-	p3, err := ac.NewPlayer(d3)
-	if err != nil {
-		log.Fatal(err)
-	}
+	// d3, err := wav.Decode(ac, bytes.NewReader(step3))
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// p3, err := ac.NewPlayer(d3)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 	return &Player{
-		x:    x,
-		y:    y,
-		walk: []*audio.Player{p1, p2, p3},
+		x: x,
+		y: y,
+		// walk: []*audio.Player{p1, p2, p3},
 	}
 
 }
@@ -116,7 +112,7 @@ func (p *Player) move(newPosition PlayerMove) {
 		p.Level.UpdateBoard(p.x, p.y, newPosition.x, newPosition.y)
 		p.x = newPosition.x
 		p.y = newPosition.y
-		p.PlayFootstep()
+		// p.PlayFootstep()
 		p.Level.UpdateCamera(p.x, p.y)
 	}
 }
