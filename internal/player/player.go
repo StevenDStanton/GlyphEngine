@@ -39,39 +39,8 @@ type PlayerMove struct {
 	y int
 }
 
-func New(ac *audio.Context, x, y int) *Player {
-	// d1, err := wav.Decode(ac, bytes.NewReader(step1))
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// p1, err := ac.NewPlayer(d1)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
-	// d2, err := wav.Decode(ac, bytes.NewReader(step2))
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// p2, err := ac.NewPlayer(d2)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
-	// d3, err := wav.Decode(ac, bytes.NewReader(step3))
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// p3, err := ac.NewPlayer(d3)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	return &Player{
-		x: x,
-		y: y,
-		// walk: []*audio.Player{p1, p2, p3},
-	}
-
+func New() *Player {
+	return &Player{}
 }
 
 func (p *Player) Update() {
@@ -128,4 +97,34 @@ func (p *Player) PlayFootstep() {
 func (p *Player) SetPosition(x, y int) {
 	p.x = x
 	p.y = y
+}
+
+func loadAudio() {
+	// d1, err := wav.Decode(ac, bytes.NewReader(step1))
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// p1, err := ac.NewPlayer(d1)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+
+	// d2, err := wav.Decode(ac, bytes.NewReader(step2))
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// p2, err := ac.NewPlayer(d2)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+
+	// d3, err := wav.Decode(ac, bytes.NewReader(step3))
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// p3, err := ac.NewPlayer(d3)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// walk: []*audio.Player{p1, p2, p3},
 }

@@ -23,7 +23,8 @@ func main() {
 
 	g := game.New(screenWidth, screenHeight)
 
-	p := player.New(g.AudioContext, 10, 10)
+	p := player.New()
+
 	i := intro.New()
 
 	l := level.New()
