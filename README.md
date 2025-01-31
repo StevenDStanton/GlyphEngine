@@ -19,3 +19,20 @@ You will also need to update the image references that I did not include for the
 ## Why share
 
 I had fun with it, and I am hoping someone else will find this interesting or useful and do something cool with it despite how badly written it is.
+
+## ToDo List
+
+- [ ] Fix Restart Not resetting Camera
+- [ ] 100% test coverage `player.go`
+- [ ] Add New Audio for `player.go`
+- [ ] 100% test coverage `game.go`
+- [ ] 100% test coverage `intro.go`
+- [ ] refactor `camera.go` into its own package
+- [ ] refactor `dialog.go` into its own package
+- [ ] 100% test coverage `level.go`
+- [ ] 100% test coverage `camera.go`
+- [ ] 100% test coverage `dialog.go`
+- [ ] Patrolling NPCs
+- [ ] Trust Meter
+- [ ] Timed Events
+- [ ] Input
