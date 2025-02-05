@@ -69,7 +69,7 @@ var (
 		level_5_dialog,
 	}
 )
-u=uuu
+
 type Level struct {
 	face                 font.Face
 	TheGrid              [][]rune
