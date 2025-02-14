@@ -4,6 +4,8 @@ This is a small, badly written, text based 2D engine written in Go using the Ebi
 
 I wrote this in a few days during the Pirate Software Game Jam. It started out beautifully structured using all of the best practices.
 
+You can find the game I created with it here [The Social Contract](https://apocalypsetheory.itch.io/the-social-contract)
+
 As life happened and time grew short it became a tangled ball of mud.
 
 still I had fun writing it, I may even come back and clean it up more in the future.
